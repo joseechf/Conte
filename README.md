@@ -25,47 +25,10 @@ Requisitos No funcionales
 
 Alcance 
 1. MVP
+2.Solo funciona con intenert
 
-Tecnologías
-Frontend
-  React
-Backend
-  Nodejs
-  SQL
-API'S
-  GeoJSON (mapa en capas)
-Alojamiento 
-Control de versiones
-  Github
-Plataforma
-  App híbrida 
   
 
-Arquitectúra en Capas
-Vista
-  Pantallas
-    -Login
-      -Registro (formulario con roles segun cliente-técnico-contratista)
-      -Iniciar sesion (con gmail y password, google)
-    -Buscador
-      -General (con filtros)
-      -Expandido (Cuadro de texto con info adicional incluyendo publicaciones)
-    -Perfil
-      -Cliente 
-      -Técnico
-    -Solicitud (cambia el form dependiendo si es cotización o trabajo)
-  Cuadro de texto (alert)
-    -Calificar 
-Logica
-  Componentes
-  -ORM
-  -Login CRUD
-  -Buscador
-Datos
-  Base de datos 
-    -Tabla Técnico
-    -Tabla Cliente
-    -Tabla Lista Trabajos Realizados
-    -Tabla Calificaciones
+
     
 
