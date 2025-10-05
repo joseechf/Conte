@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "nombre": "Carlos Pérez",
+    "habilidades": ["Electricidad", "Mantenimiento industrial"],
+    "foto": "carlos.jpg",
+    "ubicacion": "Ciudad de Panamá",
+    "calificaciones": [5, 4, 4.5]
+  },
+  {
+    "id": 2,
+    "nombre": "María Gómez",
+    "habilidades": ["Fontanería", "Instalación de sistemas sanitarios"],
+    "foto": "maria.jpg",
+    "ubicacion": "Colón",
+    "calificaciones": [4, 4.5, 5]
+  },
+  {
+    "id": 3,
+    "nombre": "Luis Rodríguez",
+    "habilidades": ["Carpintería", "Muebles a medida"],
+    "foto": "luis.jpg",
+    "ubicacion": "David, Chiriquí",
+    "calificaciones": []
+  },
+  {
+    "id": 4,
+    "nombre": "Ana Morales",
+    "habilidades": ["Jardinería", "Paisajismo"],
+    "foto": "ana.jpg",
+    "ubicacion": "Santiago, Veraguas"
+  }
+]
