@@ -1,22 +1,37 @@
 import trabajo from "../../domain/tecnico.js";
 import CRUDtecnicos from "../../infrastructure/CRUDtecnicos.js";
+import tecnicosCache from "../../infrastructure/tecnicosCache.js";
 
 export class gestorTecnicos {
-    __tecnicos = []; // Array para almacenar los trabajos
-    constructor() {
-        //this.crudtrabajos = crudtrabajos;
-    }
+
     async ObtenerTrabajos() {
+        if(!tecnicosCache.isExpired(10) && tecnicosCache.get() != null){
+            return {"status":200}; //si aun no ha expirado el cache, no hago nada y retorno el estado 200
+        }
         try {
             let data = await CRUDtecnicos.seleccionar();
             if(data == null) throw new Error("No se encontraron trabajos");
-            this.__tecnicos = data.map((row) => {
-                return new trabajo(row);
-            });
-            return {"status":200,"tecnicos":this.__tecnicos};
+            data = data.map((item) => new trabajo(item)); //validar datos
+            tecnicosCache.set(data);
+            return {"status":200};
         } catch (error) {
             return {"status":500,"message":error.message}
         }
     }
     
+}
+
+export class gestorTecnicosConFiltro {
+    constructor(filtrar){
+        this.filtrar = filtrar;
+    }   
+    async ObtenerTecnicosFiltrados(filtro) {
+        try {
+            let dataFiltrada = await this.filtrar.aplicarFiltro(filtro);
+            if(dataFiltrada === 0) throw new Error("No se encontraron tecnicos con esos filtros");
+            return {"status":200, "data": dataFiltrada};            
+        } catch (error) {
+            return {"status":500,"message":error.message};
+        }
+    }
 }
