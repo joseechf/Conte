@@ -1,7 +1,7 @@
 import tecnicosCache from "../infrastructure/tecnicosCache.js";
 
 export default class Filtrar {
-    aplicarFiltro(filtro){
+    static aplicarFiltro(filtro){
         if(!tecnicosCache.get() || tecnicosCache.get().length === 0){
             throw new Error("No hay tecnicos en cache para filtrar");
         }

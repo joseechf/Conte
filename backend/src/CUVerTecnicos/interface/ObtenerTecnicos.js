@@ -1,6 +1,5 @@
 import { gestorTecnicos, gestorTecnicosConFiltro } from "../aplication/CUverTecnicos/gestorTecnicos.js";
 import tecnicosCache from "../infrastructure/tecnicosCache.js";
-import Filtrar from "../domain/filtrar.js";
 
 class ObtenerTecnicos {
     constructor(gestortecnicos,tecnicosFiltrados) {
@@ -34,9 +33,9 @@ let filtro = {"calificacion":4.5,"habilidades":"Fontanería","ubicacion":"Colón
 //
 
 //inyecciones de dependencias
-const filtrar = new Filtrar();
+//const filtrar = new Filtrar();
 const gestortecnicos = new gestorTecnicos();
-const tecnicosFiltrados = new gestorTecnicosConFiltro(filtrar);
+const tecnicosFiltrados = new gestorTecnicosConFiltro();
 //declarar objetos
 const obtenertecnicos = new ObtenerTecnicos(gestortecnicos,tecnicosFiltrados);
 //ejecucion de objetos

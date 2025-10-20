@@ -10,19 +10,19 @@ export default class tecnicosCache {
         this.tecnicos = null, 
         this.timestamp = null
     }
-    static set(tecnicos){
+    set(tecnicos){
         this.tecnicos = tecnicos;
         this.timestamp = Date.now();
     }
-    static get(){
+    get(){
         return this.tecnicos;
     }
-    static isExpired(limite){
+    isExpired(limite){
         if(!this.timestamp) return true;
         let tiempoTrasncurrido = (Date.now() - this.timestamp) / 1000 / 60; 
         return tiempoTrasncurrido > limite; //si el limite es mayor al tiempo transcurrido, no ha expirado
     }
-    static clear(){
+    clear(){
         this.tecnicos = null;
         this.timestamp = null;
     }

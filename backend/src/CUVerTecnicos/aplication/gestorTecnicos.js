@@ -1,6 +1,8 @@
-import trabajo from "../../domain/tecnico.js";
-import CRUDtecnicos from "../../infrastructure/CRUDtecnicos.js";
-import tecnicosCache from "../../infrastructure/tecnicosCache.js";
+import trabajo from "../domain/tecnico.js";
+import CRUDtecnicos from "../infrastructure/CRUDtecnicos.js";
+import tecnicosCache from "../infrastructure/tecnicosCache.js";
+import Filtrar from "../domain/filtrar.js";
+
 
 export class gestorTecnicos {
 
@@ -22,12 +24,10 @@ export class gestorTecnicos {
 }
 
 export class gestorTecnicosConFiltro {
-    constructor(filtrar){
-        this.filtrar = filtrar;
-    }   
+
     async ObtenerTecnicosFiltrados(filtro) {
         try {
-            let dataFiltrada = await this.filtrar.aplicarFiltro(filtro);
+            let dataFiltrada = await Filtrar.aplicarFiltro(filtro);
             if(dataFiltrada === 0) throw new Error("No se encontraron tecnicos con esos filtros");
             return {"status":200, "data": dataFiltrada};            
         } catch (error) {
