@@ -1,5 +1,5 @@
 
-export default mensajero = {
+export const mensajero = {
     enviarMensajeTec(mensaje){
         console.log(mensaje);
     }

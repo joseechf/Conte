@@ -1,5 +1,5 @@
 
-export default formato = {
+export const formato = {
     BDToObject(data){
         return JSON.parse(data);
     },

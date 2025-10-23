@@ -1,11 +1,11 @@
-import tecnicosCache from "../infrastructure/tecnicosCache.js";
 
-export default class Filtrar {
-    static aplicarFiltro(filtro){
+export const Filtrar = {
+    aplicarFiltro(filtro,tecnicosCache){
         if(!tecnicosCache.get() || tecnicosCache.get().length === 0){
             throw new Error("No hay tecnicos en cache para filtrar");
         }
-        let resultFiltrado = tecnicosCache.tecnicos.filter(tecnico => {
+        let data = tecnicosCache.get();
+        let resultFiltrado = data.filter(tecnico => {
             const calificacion = filtro.calificacion ? tecnico.calificaciones >= filtro.calificacion : true;
             const habilidades = filtro.habilidades ? tecnico.habilidades.some(h => filtro.habilidades.includes(h)) : true;
             const ubicacion = filtro.ubicacion ? tecnico.ubicacion === filtro.ubicacion : true;

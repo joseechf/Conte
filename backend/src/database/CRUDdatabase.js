@@ -1,11 +1,11 @@
 
-import { formato } from "../../util/Formato.js";
+import {formato} from "../util/Formato.js";
 
 //import de prueba
 import fs from "fs";
 import {promises as fp } from "fs";
 
-export default class CRUDsolicitud {
+export default class CRUDdatabase {
     constructor(ruta){
         this.conectar(ruta);
     }

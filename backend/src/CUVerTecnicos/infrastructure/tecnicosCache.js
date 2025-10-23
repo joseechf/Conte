@@ -6,13 +6,13 @@ export default class tecnicosCache {
         if(tecnicosCache.tecnicosInstancia != null){
             return tecnicosCache.tecnicosInstancia;
         }
-        this.tecnicosInstancia = this;
-        this.tecnicos = null, 
+        tecnicosCache.tecnicosInstancia = this;
+        this.tecnicos = null,
         this.timestamp = null
     }
     set(tecnicos){
         this.tecnicos = tecnicos;
-        this.timestamp = Date.now();
+        this.timestamp = Date.now(); 
     }
     get(){
         return this.tecnicos;

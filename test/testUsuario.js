@@ -1,6 +1,6 @@
 import gestorFormulario from "../backend/src/CUsolicitarTrabajo/interface/gestorFormulario.js";
 import gestorSolicitud from "../backend/src/CUsolicitarTrabajo/aplication/gestorSolicitud.js";
-import CRUDsolicitud from "../backend/src/CUsolicitarTrabajo/infrastructure/CRUDsolicitud.js";
+import CRUDdatabase from "../backend/src/database/CRUDdatabase.js";
 
 //requerimientos para fs
 import { fileURLToPath } from "url";
@@ -13,7 +13,7 @@ const ruta = path.join(__dirname, '../backend/src/util/bdpruebaSol.json');
 const formData = {id:"1", idtec:"3",idcli:"4", descripcion: "soldar un barco que tengo", ubicacion: "los santos", estado: "pendiente"}; 
 
 // inyecciones de dependencias
-const CRUDInstance = new CRUDsolicitud(ruta); 
+const CRUDInstance = new CRUDdatabase(ruta); 
 const GestorS = new gestorSolicitud(CRUDInstance);
 
 const GF = new gestorFormulario(GestorS);

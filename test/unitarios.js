@@ -1,4 +1,4 @@
-import CRUDsolicitud from "../backend/src/CUsolicitarTrabajo/infrastructure/CRUDsolicitud.js";
+import CRUDsolicitud from "../backend/src/database/CRUDsolicitud.js";
 import { fileURLToPath } from "url";
 import path from "path";
 const __filename = fileURLToPath(import.meta.url);

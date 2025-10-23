@@ -1,5 +1,5 @@
 
-import { formato } from "../../util/Formato.js";
+import {formato} from "../../util/Formato.js";
 
 export default class gestorFormulario {
   constructor(GestorS) {

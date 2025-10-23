@@ -1,4 +1,4 @@
-import mensajero from '../../mensajeria/mensajero.js';
+import {mensajero} from '../../util/mensajero.js';
 
 export default class eventPendiente {
 
