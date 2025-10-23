@@ -4,10 +4,18 @@ export default class eventPendiente {
 
     constructor(CRUDInstance){
         this.CRUDsolicitud = CRUDInstance;
+        this.mensaje = new mensajero();
     }
     
-    async notificarPendiente(){
-        mensajero.enviarMensajeTec("Notificacion: Hola tecnico, tienes una nueva solicitud pendiente.");
+    async notificarPendiente(descripcion){
+        try {
+            let mensaje = descripcion+"\n aceptar trabajo: si o no : ";
+            let respuesta = await this.mensaje.enviarSolicitudTecnico(mensaje);
+            this.mensaje.close();
+            return respuesta;
+        } catch (error) {
+            throw error;
+        }
     }
     async insertarSolicitud(data = {}){
         try {

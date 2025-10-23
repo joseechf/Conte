@@ -38,4 +38,16 @@ export default class solicitudTrabajo {
             estado: this.estado
         }
     }
+
+    setEstado(estado){
+        if((this.estado === "pendiente") && ((estado === "aprobado") || (estado === "negado"))){
+            this.estado = estado;
+            return true;
+        }
+        if(estado === "terminado" && this.estado === "aprobado"){
+            this.estado = estado;
+            return true;
+        }
+        return false;
+    }
 }

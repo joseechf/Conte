@@ -12,7 +12,17 @@ export default class gestorSolicitud {
             const entidad = solicitudTrabajo.singleton(data); 
             switch (entidad.estado) {
                 case "pendiente":
-                    await this.eventPendiente.notificarPendiente();
+                    try {
+                        let solicitud = entidad.getData();
+                        let respuesta = await this.eventPendiente.notificarPendiente(solicitud.idcli+" "+solicitud.descripcion+" "+solicitud.ubicacion);
+                        if(entidad.setEstado(respuesta)){
+                            console.log("estado cambiado",respuesta);
+                        }else{
+                            throw {status:"500",message: new Error("error al cambiar el estado")} 
+                        }                        
+                    } catch (error) {
+                        return error;
+                    }
                     try {
                         let result = await this.eventPendiente.insertarSolicitud(entidad.getData());
                         return result;

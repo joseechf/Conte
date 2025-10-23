@@ -1,9 +1,9 @@
-import CRUDsolicitud from "../backend/src/database/CRUDsolicitud.js";
+import CRUDsolicitud from "../../backend/src/database/CRUDsolicitud.js";
 import { fileURLToPath } from "url";
 import path from "path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const ruta = path.join(__dirname, "../backend/src/util/bdpruebaSol.json");
+const ruta = path.join(__dirname, "../dataprueba/bdpruebaSol.json");
 
 const CRUDso = new CRUDsolicitud(ruta);
 try {

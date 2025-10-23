@@ -8,7 +8,7 @@ import { fileURLToPath } from "url";
 import path from "path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const ruta = path.join(__dirname, '../../backend/src/util/bdpruebaTec.json');
+const ruta = path.join(__dirname, '../dataprueba/bdpruebaTec.json');
 
 
 //ejemplo de uso del filtrado
